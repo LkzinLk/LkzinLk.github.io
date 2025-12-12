@@ -1,23 +1,55 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Achadinhos Prime</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-    <img src="logo.png" class="logo">
-    <h1>Achadinhos Prime</h1>
-    <p class="sub">Descontos & Utilidades p/ o seu dia a dia.</p>
+  <main class="wrap">
+    <header class="hero">
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Achadinhos Prime" class="logo" />
+      </div>
+      <h1 class="title">Achadinhos Prime</h1>
+      <p class="subtitle">Descontos &amp; Utilidades p/ o seu dia a dia.</p>
+    </header>
 
-    <a class="card" href="https://amzn.to/4pDUKBO" target="_blank">
-        Echo Show 5 (Geração mais recente)
-    </a>
-    <a class="card" href="https://amzn.to/3xVv0Ct" target="_blank">
-        Aspirador de Pó Portátil Soprador 2 em 1 Multifuncional
-    </a>
-</div>
+    <section class="cards">
+      <article class="card">
+        <div class="card-media">
+          <img src="https://m.media-amazon.com/images/I/61M0HcZndcL._AC_SX679_.jpg" alt="Aspirador 2 em 1" />
+        </div>
+        <div class="card-body">
+          <h3>Aspirador de Pó Portátil Soprador 2 em 1 Multifuncional</h3>
+          <p class="price-note">Prático, portátil e potente — ótimo achado!</p>
+          <a class="btn" href="https://amzn.to/3xVv0Ct" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 6h14v2H3zM3 11h10v2H3zM3 16h6v2H3z"></path></svg>
+            Ver no Amazon
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <img src="https://m.media-amazon.com/images/I/61p3lICiQFL._AC_SY879_.jpg" alt="Echo Show 5" />
+        </div>
+        <div class="card-body">
+          <h3>Echo Show 5 (Geração mais recente)</h3>
+          <p class="price-note">Display compacto com Alexa — perfeito pra casa inteligente.</p>
+          <a class="btn" href="https://amzn.to/4pDUKBO" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 6h14v2H3zM3 11h10v2H3zM3 16h6v2H3z"></path></svg>
+            Ver no Amazon
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <small>© Achadinhos Prime</small>
+    </footer>
+  </main>
 </body>
 </html>
