@@ -1,107 +1,131 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Achados Geniais</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achados Geniais</title>  <!-- Fonte -->  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  <style>
     :root {
-      --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      --card: #111827;
-      --text: #ffffff;
-      --muted: #9ca3af;
-      --btn: linear-gradient(135deg, #6366f1, #8b5cf6);
+      --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --card-bg: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text-main: #ffffff;
+      --text-muted: #cbd5e1;
+      --button-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
     }
 
     @media (prefers-color-scheme: light) {
       :root {
-        --bg: linear-gradient(135deg, #e0e7ff, #fdf2f8);
-        --card: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
+        --bg-gradient: linear-gradient(135deg, #eef2ff, #fef9c3);
+        --card-bg: #ffffff;
+        --card-border: #e5e7eb;
+        --text-main: #0f172a;
+        --text-muted: #475569;
       }
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      margin: 0;
-      padding: 24px;
-      background: var(--bg);
-      color: var(--text);
       min-height: 100vh;
+      background: var(--bg-gradient);
+      display: flex;
+      justify-content: center;
+      padding: 24px;
     }
 
     .container {
+      width: 100%;
       max-width: 420px;
-      margin: auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+      animation: fadeDown 0.8s ease;
     }
 
     .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 20px;
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
       background: #fff;
-      padding: 12px;
+      padding: 8px;
       margin: 0 auto 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .logo img {
       width: 100%;
-      border-radius: 12px;
+      height: 100%;
+      object-fit: contain;
     }
 
     h1 {
-      text-align: center;
-      margin: 10px 0;
-      font-size: 2rem;
+      color: var(--text-main);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
     .subtitle {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 32px;
+      color: var(--text-muted);
+      font-size: 14px;
     }
 
+    /* Cards */
     .card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 20px;
       display: flex;
-      gap: 16px;
-      align-items: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,.35);
-      animation: fadeUp .6s ease both;
+      gap: 14px;
+      padding: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+      animation: fadeUp 0.7s ease;
     }
 
-    .card img {
-      width: 72px;
-      height: 72px;
+    .product-img {
+      width: 64px;
+      height: 64px;
       border-radius: 14px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      flex-shrink: 0;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      background: #fff;
-      padding: 6px;
-      box-shadow: 0 6px 18px rgba(255,255,255,.25);
+      border-radius: 12px;
+    }
+
+    .card-content {
+      flex: 1;
     }
 
     .card-content h2 {
-      margin: 0 0 6px;
-      font-size: 1rem;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
     }
 
     .card-content p {
-      margin: 0 0 12px;
-      font-size: .9rem;
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
     }
 
     .btn {
@@ -109,77 +133,88 @@
       align-items: center;
       gap: 8px;
       padding: 10px 16px;
-      border-radius: 14px;
-      background: var(--btn);
+      background: var(--button-gradient);
       color: #fff;
-      text-decoration: none;
+      font-size: 14px;
       font-weight: 600;
-      font-size: .9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 20px rgba(99,102,241,0.45);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(99,102,241,0.6);
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
-      font-size: .8rem;
-      color: var(--muted);
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-  </style>
-</head>
 
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style></head>
 <body>
-  <div class="container">
+  <div class="container"><!-- Header -->
+<header class="header">
+  <div class="logo">
+    <img src="logo-achados-geniais.png" alt="Achados Geniais">
+  </div>
+  <h1>Achadinhos Prime</h1>
+  <p class="subtitle">Descontos & Utilidades p/ o seu dia a dia.</p>
+</header>
 
-    <div class="logo">
-      <img src="logo-achados-geniais.png" alt="Achados Geniais" class="logo">
-    </div>
+<!-- Produto 1 -->
+<div class="card">
+  <div class="product-img">
+    <img src="aspirador.png" alt="Aspirador 2 em 1">
+  </div>
+  <div class="card-content">
+    <h2>Aspirador de Pó Portátil Soprador 2 em 1</h2>
+    <p>Prático, portátil e potente — ótimo achado!</p>
+    <a class="btn" href="https://www.amazon.com.br/dp/B0D21BFF1X" target="_blank">Ver no Amazon</a>
+  </div>
+</div>
 
-    <h1>Achadinhos Prime</h1>
-    <p class="subtitle">Descontos & Utilidades p/ o seu dia a dia.</p>
+<!-- Produto 2 -->
+<div class="card">
+  <div class="product-img">
+    <img src="echo-show-5.png" alt="Echo Show 5">
+  </div>
+  <div class="card-content">
+    <h2>Echo Show 5 (Geração mais recente)</h2>
+    <p>Display compacto com Alexa — perfeito pra casa inteligente.</p>
+    <a class="btn" href="https://amzn.to/4pDUKBO" target="_blank">Ver no Amazon</a>
+  </div>
+</div>
 
-    <!-- Produto 1 -->
-    <div class="card">
-      <img src="img/aspirador.jpg" alt="Aspirador 2 em 1">
-      <div class="card-content">
-        <h2>Aspirador de Pó Portátil 2 em 1</h2>
-        <p>Prático, portátil e potente — ótimo achado!</p>
-        <a class="btn" href="https://www.amazon.com.br/dp/B0D21BFF1X" target="_blank">Ver no Amazon</a>
-      </div>
-    </div>
+<!-- Produto 3 -->
+<div class="card">
+  <div class="product-img">
+    <img src="mini-projetor.png" alt="Mini Projetor">
+  </div>
+  <div class="card-content">
+    <h2>Mini Projetor Portátil Full HD</h2>
+    <p>Transforme qualquer parede em cinema — compacto e potente.</p>
+    <a class="btn" href="https://amzn.to/3Ypz68h" target="_blank">Ver no Amazon</a>
+  </div>
+</div>
 
-    <!-- Produto 2 -->
-    <div class="card">
-      <img src="img/echo-show.jpg" alt="Echo Show 5">
-      <div class="card-content">
-        <h2>Echo Show 5 (Geração mais recente)</h2>
-        <p>Display compacto com Alexa — perfeito pra casa inteligente.</p>
-        <a class="btn" href="https://amzn.to/4pDUKBO" target="_blank">Ver no Amazon</a>
-      </div>
-    </div>
-
-    <!-- Produto 3 -->
-    <div class="card">
-      <img src="img/mini-projetor.jpg" alt="Mini Projetor Portátil Full HD">
-      <div class="card-content">
-        <h2>Mini Projetor Portátil Full HD</h2>
-        <p>Transforme qualquer parede em cinema — compacto e potente.</p>
-        <a class="btn" href="https://amzn.to/3Ypz68h" target="_blank">Ver no Amazon</a>
-      </div>
-    </div>
-
-    <footer>© Achadinhos Prime</footer>
+<footer>
+  © Achados Geniais 
+</footer>
 
   </div>
 </body>
-</html>
-
+      </html>
