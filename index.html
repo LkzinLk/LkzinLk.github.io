@@ -1,181 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Achados Geniais</title>
-
-  <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #f8fafc, #e2e8f0);
-      --card-bg: #ffffff;
-      --primary: #2563eb;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background: var(--bg-gradient);
-      display: flex;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      margin-bottom: 32px;
-      animation: fadeDown 0.8s ease;
-    }
-
-    .logo img {
-      width: 90px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      color: var(--text-main);
-    }
-
-    .subtitle {
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      margin-bottom: 24px;
-      animation: fadeUp 0.8s ease;
-    }
-
-    .product-img img {
-      width: 100%;
-      display: block;
-    }
-
-    .card-content {
-      padding: 16px;
-    }
-
-    .card-content h2 {
-      font-size: 1.1rem;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .card-content p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .btn {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achados Geniais</title>  <!-- CSS -->  <link rel="stylesheet" href="style.css?v=4" />
 </head>
+<body>  <!-- HEADER -->  <header class="header">
+    <img src="https://i.imgur.com/6QKQJpR.png" alt="Achados Geniais" class="logo" />
+    <h1>Achados Geniais</h1>
+    <p>Descontos, utilidades e ofertas imperdíveis</p>
+  </header>  <!-- LISTA DE PRODUTOS -->  <main class="container"><!-- PRODUTO 1 -->
+<div class="card">
+  <img class="product-img" src="https://m.media-amazon.com/images/I/61qvZyKZJZL._AC_SL1500_.jpg" alt="Aspirador de Pó Portátil" />
+  <h2>Aspirador de Pó Portátil</h2>
+  <p>Compacto, potente e ideal para o dia a dia.</p>
+  <a href="#" target="_blank" class="btn">Ver no Amazon</a>
+</div>
 
-<body>
-  <div class="container">
+<!-- PRODUTO 2 -->
+<div class="card">
+  <img class="product-img" src="https://m.media-amazon.com/images/I/71N6K0v3uJL._AC_SL1500_.jpg" alt="Echo Show 5" />
+  <h2>Echo Show 5 (Geração mais recente)</h2>
+  <p>Display compacto com Alexa — perfeito pra casa inteligente.</p>
+  <a href="#" target="_blank" class="btn">Ver no Amazon</a>
+</div>
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="logo">
-        <img src="logo-achados-geniais.png" alt="Achados Geniais">
-      </div>
-      <h1>Achados Geniais</h1>
-      <p class="subtitle">Descontos, utilidades e ofertas imperdíveis</p>
-    </header>
+<!-- PRODUTO 3 -->
+<div class="card">
+  <img class="product-img" src="https://m.media-amazon.com/images/I/61KJxq1f0XL._AC_SL1500_.jpg" alt="Mini Projetor Portátil" />
+  <h2>Mini Projetor Portátil Full HD</h2>
+  <p>Transforme qualquer parede em cinema.</p>
+  <a href="#" target="_blank" class="btn">Ver no Amazon</a>
+</div>
 
-    <!-- PRODUTO 1 -->
-    <div class="card">
-      <div class="product-img">
-        <img src="aspirador-portatil.jpg" alt="Aspirador Portátil">
-      </div>
-      <div class="card-content">
-        <h2>Aspirador de Pó Portátil</h2>
-        <p>Compacto, potente e ideal para o dia a dia.</p>
-        <a class="btn" href="#" target="_blank">Ver oferta</a>
-      </div>
-    </div>
+<!-- PRODUTO 4 -->
+<div class="card">
+  <img class="product-img" src="https://m.media-amazon.com/images/I/61WwKZcZcXL._AC_SL1500_.jpg" alt="Luminária com Sensor" />
+  <h2>Luminária com Sensor de Movimento</h2>
+  <p>Acende automaticamente — ideal para corredores e closets.</p>
+  <a href="#" target="_blank" class="btn">Ver no Amazon</a>
+</div>
 
-    <!-- PRODUTO 2 -->
-    <div class="card">
-      <div class="product-img">
-        <img src="echo-show-5.jpg" alt="Echo Show 5">
-      </div>
-      <div class="card-content">
-        <h2>Echo Show 5</h2>
-        <p>Alexa com tela inteligente para sua casa.</p>
-        <a class="btn" href="#" target="_blank">Ver oferta</a>
-      </div>
-    </div>
-
-    <!-- PRODUTO 3 -->
-    <div class="card">
-      <div class="product-img">
-        <img src="mini-projetor.jpg" alt="Mini Projetor">
-      </div>
-      <div class="card-content">
-        <h2>Mini Projetor Portátil</h2>
-        <p>Transforme qualquer ambiente em cinema.</p>
-        <a class="btn" href="#" target="_blank">Ver oferta</a>
-      </div>
-    </div>
-
-    <!-- PRODUTO 4 -->
-    <div class="card">
-      <div class="product-img">
-        <img src="luminaria-sensor.jpg" alt="Luminária com Sensor">
-      </div>
-      <div class="card-content">
-        <h2>Luminária com Sensor de Movimento</h2>
-        <p>Acende automaticamente no escuro.</p>
-        <a class="btn" href="#" target="_blank">Ver oferta</a>
-      </div>
-    </div>
-
-  </div>
-</body>
+  </main></body>
 </html>
