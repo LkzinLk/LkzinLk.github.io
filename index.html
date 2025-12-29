@@ -1,522 +1,501 @@
-<!DOCTYPE html>  <html lang="pt-BR">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>Achados Geniais</title>    <!-- Fonte -->    <link rel="preconnect" href="https://fonts.googleapis.com">  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">    <style>  
-    :root {  
-      --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);  
-      --card-bg: rgba(255,255,255,0.08);  
-      --card-border: rgba(255,255,255,0.12);  
-      --text-main: #ffffff;  
-      --text-muted: #cbd5e1;  
-      --button-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);  
-    }  
-  
-    @media (prefers-color-scheme: light) {  
-      :root {  
-        --bg-gradient: linear-gradient(135deg, #eef2ff, #fef9c3);  
-        --card-bg: #ffffff;  
-        --card-border: #e5e7eb;  
-        --text-main: #0f172a;  
-        --text-muted: #475569;  
-      }  
-    }  
-  
-    * {  
-      margin: 0;  
-      padding: 0;  
-      box-sizing: border-box;  
-      font-family: 'Inter', sans-serif;  
-    }  
-  
-    body {  
-      min-height: 100vh;  
-      background: var(--bg-gradient);  
-      display: flex;  
-      justify-content: center;  
-      padding: 24px;  
-    }  
-  
-    .container {  
-      width: 100%;  
-      max-width: 420px;  
-    }  
-  
-    /* Header */  
-    .header {  
-      text-align: center;  
-      margin-bottom: 32px;  
-      animation: fadeDown 0.8s ease;  
-    }  
-  
-    .logo {  
-      width: 110px;  
-      height: 110px;  
-      border-radius: 24px;  
-      background: #fff;  
-      padding: 8px;  
-      margin: 0 auto 16px;  
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);  
-    }  
-  
-    .logo img {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: contain;  
-    }  
-  
-    h1 {  
-      color: var(--text-main);  
-      font-size: 28px;  
-      font-weight: 700;  
-      margin-bottom: 6px;  
-    }  
-  
-    .subtitle {  
-      color: var(--text-muted);  
-      font-size: 14px;  
-    }  
-  
-    /* Cards */  
-    .card {  
-      display: flex;  
-      gap: 14px;  
-      padding: 16px;  
-      background: var(--card-bg);  
-      border: 1px solid var(--card-border);  
-      border-radius: 20px;  
-      margin-bottom: 18px;  
-      backdrop-filter: blur(10px);  
-      animation: fadeUp 0.7s ease;  
-    }  
-  
-    .product-img {  
-      width: 64px;  
-      height: 64px;  
-      border-radius: 14px;  
-      background: #ffffff;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);  
-      flex-shrink: 0;  
-    }  
-  
-    .product-img img {  
-      width: 100%;  
-      height: 100%;  
-      object-fit: cover;  
-      border-radius: 12px;  
-    }  
-  
-    .card-content {  
-      flex: 1;  
-    }  
-  
-    .card-content h2 {  
-      font-size: 16px;  
-      font-weight: 600;  
-      color: var(--text-main);  
-      margin-bottom: 4px;  
-    }  
-  
-    .card-content p {  
-      font-size: 13px;  
-      color: var(--text-muted);  
-      margin-bottom: 10px;  
-    }  
-  
-    .btn {  
-      display: inline-flex;  
-      align-items: center;  
-      padding: 10px 16px;  
-      background: var(--button-gradient);  
-      color: #fff;  
-      font-size: 14px;  
-      font-weight: 600;  
-      border-radius: 12px;  
-      text-decoration: none;  
-      box-shadow: 0 6px 20px rgba(99,102,241,0.45);  
-    }  
-  
-    footer {  
-      text-align: center;  
-      margin-top: 32px;  
-      font-size: 12px;  
-      color: var(--text-muted);  
-    }  
-  
-    @keyframes fadeUp {  
-      from { opacity: 0; transform: translateY(20px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-  
-    @keyframes fadeDown {  
-      from { opacity: 0; transform: translateY(-20px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-  </style>  </head>  <body>  
-  <div class="container">  <!-- Header -->  
-<header class="header">  
-  <div class="logo">  
-    <img src="logo-achados-geniais.png" alt="Achados Geniais">  
-  </div>  
-  <h1>Achados Geniais</h1>  
-  <p class="subtitle">Descontos & utilidades imperdíveis</p>  
-</header>  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Achados Geniais</title>
 
-<!-- Produto 1 -->  
-<div class="card">  
-  <div class="product-img">  
-    <img src="aspirador.png" alt="Aspirador Portátil">  
-  </div>  
-  <div class="card-content">  
-    <h2>Aspirador de Pó Portátil 2 em 1</h2>  
-    <p>Prático, portátil e potente — ótimo achado!</p>  
-    <a class="btn" href="https://www.amazon.com.br/dp/B0D21BFF1X" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Produto 2 -->  
-<div class="card">  
-  <div class="product-img">  
-    <img src="echo-show-5.png" alt="Echo Show 5">  
-  </div>  
-  <div class="card-content">  
-    <h2>Echo Show 5</h2>  
-    <p>Alexa com tela inteligente pra sua casa.</p>  
-    <a class="btn" href="https://amzn.to/4pDUKBO" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  
+<style>
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --card-bg: rgba(255,255,255,0.08);
+  --card-border: rgba(255,255,255,0.12);
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1;
+  --button-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
 
-<!-- Produto 3 -->  
-<div class="card">  
-  <div class="product-img">  
-    <img src="mini-projetor.png" alt="Mini Projetor">  
-  </div>  
-  <div class="card-content">  
-    <h2>Mini Projetor Portátil Full HD</h2>  
-    <p>Transforme qualquer ambiente em cinema.</p>  
-    <a class="btn" href="https://amzn.to/3Ypz68h" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-gradient: linear-gradient(135deg, #eef2ff, #fef9c3);
+    --card-bg: #ffffff;
+    --card-border: #e5e7eb;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+  }
+}
 
-<!-- Produto 4 -->  
-<div class="card">  
-  <div class="product-img">  
-    <img src="luminaria-sensor.png" alt="Luminária com Sensor">  
-  </div>  
-  <div class="card-content">  
-    <h2>Luminária com Sensor de Movimento</h2>  
-    <p>Acende sozinha no escuro — perfeita pra corredores e closets.</p>  
-    <a class="btn" href="https://amzn.to/3XT3s2Q" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
+  background: #fff;
+  padding: 8px;
+  margin: 0 auto 16px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  color: var(--text-main);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.product-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content h2 {
+  font-size: 16px;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.card-content p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--button-gradient);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4500;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="header">
+  <div class="logo">
+    <img src="logo-achados-geniais.png" alt="Achados Geniais">
+  </div>
+  <h1>Achados Geniais</h1>
+  <p class="subtitle">Descontos & utilidades imperdíveis</p>
+</header>
+
+<div id="produtos">
+
+<!-- Produto 1 -->
+<div class="card" data-id="1">
+  <div class="product-img"><img src="aspirador.png"></div>
+  <div class="card-content">
+    <h2>Aspirador de Pó Portátil 2 em 1</h2>
+    <p>Prático, portátil e potente — ótimo achado!</p>
+    <a class="btn" href="https://www.amazon.com.br/dp/B0D21BFF1X" target="_blank" onclick="registrarClique(1)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 2 -->
+<div class="card" data-id="2">
+  <div class="product-img"><img src="echo-show-5.png"></div>
+  <div class="card-content">
+    <h2>Echo Show 5</h2>
+    <p>Alexa com tela inteligente pra sua casa.</p>
+    <a class="btn" href="https://amzn.to/4pDUKBO" target="_blank" onclick="registrarClique(2)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 3 -->
+<div class="card" data-id="3">
+  <div class="product-img"><img src="mini-projetor.png"></div>
+  <div class="card-content">
+    <h2>Mini Projetor Portátil Full HD</h2>
+    <p>Transforme qualquer ambiente em cinema.</p>
+    <a class="btn" href="https://amzn.to/3Ypz68h" target="_blank" onclick="registrarClique(3)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 4 -->
+<div class="card" data-id="4">
+  <div class="product-img"><img src="luminaria-sensor.png"></div>
+  <div class="card-content">
+    <h2>Luminária com Sensor de Movimento</h2>
+    <p>Acende sozinha no escuro — perfeita pra corredores.</p>
+    <a class="btn" href="https://amzn.to/3XT3s2Q" target="_blank" onclick="registrarClique(4)">Ver no Amazon</a>
+  </div>
+</div>
 
 <!-- Produto 5 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="camera-360.png" alt="Câmera de Segurança Wi-Fi 360°">  
-  </div>  
-  <div class="card-content">  
-    <h2>Câmera de Segurança Wi-Fi 360°</h2>  
-    <p>Monitore sua casa em tempo real pelo celular, dia e noite.</p>  
-    <a class="btn" href="https://amzn.to/48Gadvi" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
-</div>  <!-- Produto 6 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="fechadura-smart.png" alt="Fechadura Eletrônica Digital Inteligente">  
-  </div>  
-  <div class="card-content">  
-    <h2>Fechadura Eletrônica Digital Inteligente</h2>  
-    <p>Mais segurança e praticidade — adeus chaves no dia a dia.</p>  
-    <a class="btn" href="https://amzn.to/3MzKUlS" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
-</div>  <!-- Produto 7 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="suporte-celular.png" alt="Suporte Articulado para Celular">  
-  </div>  
-  <div class="card-content">  
-    <h2>Suporte Articulado para Celular</h2>  
-    <p>Use o celular com as mãos livres na cama, mesa ou escritório.</p>  
-    <a class="btn" href="https://amzn.to/4oWYa1o" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
-</div>  <!-- Produto 8 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="luminaria-estrelada.png" alt="Luminária LED Estrelada RGB">  
-  </div>  
-  <div class="card-content">  
-    <h2>Luminária LED Estrelada RGB</h2>  
-    <p>Transforma qualquer ambiente com efeito estrelado incrível.</p>  
-    <a class="btn" href="https://amzn.to/3XWYHp6" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
-</div>  <!-- Produto 9 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="limpeza-ultrassonica.png" alt="Máquina de Limpeza Ultrassônica">  
-  </div>  
-  <div class="card-content">  
-    <h2>Máquina de Limpeza Ultrassônica</h2>  
-    <p>Limpeza poderosa e prática para óculos, joias, fones, relógios e muito mais!</p>  
-    <a class="btn" href="https://amzn.to/3N4JiAD" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  <!-- Produto 10 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="dispenser-sabao.png" alt="Dispensador Automático de Sabão">  
-  </div>  
-  <div class="card-content">  
-    <h2>Dispensador Automático de Sabão</h2>  
-    <p>Higiene prática e sem toque, ideal para cozinha e banheiro!</p>  
-    <a class="btn" href="https://amzn.to/3XV9RdY" target="_blank">Ver no Amazon</a>  
-  </div>  
-</div>  <!-- Produto 11 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="suporte-veicular-celular.png" alt="Suporte Veicular Magnético para Celular">  
-  </div>  
-  <div class="card-content">  
-    <h2>Suporte Veicular Magnético para Celular</h2>  
-    <p>Mantenha seu celular sempre seguro e visível enquanto dirige!</p>  
-    <a class="btn" href="https://amzn.to/495992X" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
-</div>  <!-- Produto 12 -->
-
-<div class="card">  
-  <div class="product-img">  
-    <img src="carregador-veicular-120w.png" alt="Carregador Veicular 120W">  
-  </div>  
-  <div class="card-content">  
-    <h2>Carregador Veicular 120W Retrátil</h2>  
-    <p>Potência máxima pra carregar seus dispositivos rapidinho no carro 🚗⚡</p>  
-    <a class="btn" href="https://amzn.to/4j0TIgB" target="_blank">  
-      Ver no Amazon  
-    </a>  
-  </div>  
+<div class="card" data-id="5">
+  <div class="product-img"><img src="camera-360.png"></div>
+  <div class="card-content">
+    <h2>Câmera de Segurança Wi-Fi 360°</h2>
+    <p>Monitore sua casa pelo celular.</p>
+    <a class="btn" href="https://amzn.to/48Gadvi" target="_blank" onclick="registrarClique(5)">Ver no Amazon</a>
+  </div>
 </div>
 
-    <!-- Produto 13 -->
-<div class="card">
-  <div class="product-img">
-    <img src="organizador-cabos.png" alt="Organizador Magnético de Cabos">
+<!-- Produto 6 -->
+<div class="card" data-id="6">
+  <div class="product-img"><img src="fechadura-smart.png"></div>
+  <div class="card-content">
+    <h2>Fechadura Eletrônica Digital</h2>
+    <p>Mais segurança e praticidade.</p>
+    <a class="btn" href="https://amzn.to/3MzKUlS" target="_blank" onclick="registrarClique(6)">Ver no Amazon</a>
   </div>
+</div>
+
+<!-- Produto 7 -->
+<div class="card" data-id="7">
+  <div class="product-img"><img src="suporte-celular.png"></div>
+  <div class="card-content">
+    <h2>Suporte Articulado para Celular</h2>
+    <p>Mãos livres em qualquer lugar.</p>
+    <a class="btn" href="https://amzn.to/4oWYa1o" target="_blank" onclick="registrarClique(7)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 8 -->
+<div class="card" data-id="8">
+  <div class="product-img"><img src="luminaria-estrelada.png"></div>
+  <div class="card-content">
+    <h2>Luminária LED Estrelada RGB</h2>
+    <p>Efeito incrível no ambiente.</p>
+    <a class="btn" href="https://amzn.to/3XWYHp6" target="_blank" onclick="registrarClique(8)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 9 -->
+<div class="card" data-id="9">
+  <div class="product-img"><img src="limpeza-ultrassonica.png"></div>
+  <div class="card-content">
+    <h2>Máquina de Limpeza Ultrassônica</h2>
+    <p>Óculos, joias e acessórios.</p>
+    <a class="btn" href="https://amzn.to/3N4JiAD" target="_blank" onclick="registrarClique(9)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 10 -->
+<div class="card" data-id="10">
+  <div class="product-img"><img src="dispenser-sabao.png"></div>
+  <div class="card-content">
+    <h2>Dispensador Automático de Sabão</h2>
+    <p>Sem toque e mais higiênico.</p>
+    <a class="btn" href="https://amzn.to/3XV9RdY" target="_blank" onclick="registrarClique(10)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 11 -->
+<div class="card" data-id="11">
+  <div class="product-img"><img src="suporte-veicular-celular.png"></div>
+  <div class="card-content">
+    <h2>Suporte Veicular Magnético</h2>
+    <p>Celular seguro no carro.</p>
+    <a class="btn" href="https://amzn.to/495992X" target="_blank" onclick="registrarClique(11)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 12 -->
+<div class="card" data-id="12">
+  <div class="product-img"><img src="carregador-veicular-120w.png"></div>
+  <div class="card-content">
+    <h2>Carregador Veicular 120W</h2>
+    <p>Carregamento rápido no carro.</p>
+    <a class="btn" href="https://amzn.to/4j0TIgB" target="_blank" onclick="registrarClique(12)">Ver no Amazon</a>
+  </div>
+</div>
+
+<!-- Produto 13 -->
+<div class="card" data-id="13">
+  <div class="product-img"><img src="organizador-cabos.png"></div>
   <div class="card-content">
     <h2>Organizador Magnético de Cabos</h2>
-    <p>Chega de fios bagunçados — mantenha tudo organizado na mesa!</p>
-    <a class="btn" href="https://amzn.to/4pWyvac" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Mesa sempre organizada.</p>
+    <a class="btn" href="https://amzn.to/4pWyvac" target="_blank" onclick="registrarClique(13)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 14 -->
-<div class="card">
-  <div class="product-img">
-    <img src="mini-seladora.png" alt="Mini Seladora Portátil">
-  </div>
+<!-- Produto 14 -->
+<div class="card" data-id="14">
+  <div class="product-img"><img src="mini-seladora.png"></div>
   <div class="card-content">
     <h2>Mini Seladora Portátil</h2>
-    <p>Lacre embalagens abertas e conserve alimentos por muito mais tempo.</p>
-    <a class="btn" href="https://amzn.to/4pHNWTF" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Conserva alimentos.</p>
+    <a class="btn" href="https://amzn.to/4pHNWTF" target="_blank" onclick="registrarClique(14)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 15 -->
-<div class="card">
-  <div class="product-img">
-    <img src="organizador-geladeira.png" alt="Organizador de Geladeira">
-  </div>
+<!-- Produto 15 -->
+<div class="card" data-id="15">
+  <div class="product-img"><img src="organizador-geladeira.png"></div>
   <div class="card-content">
-    <h2>Organizador de Geladeira Transparente</h2>
-    <p>Mais organização, praticidade e geladeira sempre impecável 🧊✨</p>
-    <a class="btn" href="https://amzn.to/4jcWiR0" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>Organizador de Geladeira</h2>
+    <p>Mais praticidade no dia a dia.</p>
+    <a class="btn" href="https://amzn.to/4jcWiR0" target="_blank" onclick="registrarClique(15)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 16 -->
-<div class="card">
-  <div class="product-img">
-    <img src="depilador.png" alt="Depilador Removedor de Pelos">
-  </div>
+<!-- Produto 16 -->
+<div class="card" data-id="16">
+  <div class="product-img"><img src="depilador.png"></div>
   <div class="card-content">
-    <h2>Depilador Removedor de Pelos Recarregável</h2>
-    <p>Remove pelos de roupas, sofá e cama em segundos 👕✨</p>
-    <a class="btn" href="https://amzn.to/4pN8sCv" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>Depilador Removedor de Pelos</h2>
+    <p>Roupas e sofás sem fiapos.</p>
+    <a class="btn" href="https://amzn.to/4pN8sCv" target="_blank" onclick="registrarClique(16)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 17 -->
-<div class="card">
-  <div class="product-img">
-    <img src="lixeira-sensor.png" alt="Lixeira Automática com Sensor">
-  </div>
+<!-- Produto 17 -->
+<div class="card" data-id="17">
+  <div class="product-img"><img src="lixeira-sensor.png"></div>
   <div class="card-content">
     <h2>Lixeira Automática com Sensor</h2>
-    <p>Mais higiene e praticidade — abre sozinha sem precisar encostar.</p>
-    <a class="btn" href="https://amzn.to/3MXsDPv" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Higiene sem contato.</p>
+    <a class="btn" href="https://amzn.to/3MXsDPv" target="_blank" onclick="registrarClique(17)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 18 -->
-<div class="card">
-  <div class="product-img">
-    <img src="organizador-maquiagem.png" alt="Organizador de Maquiagem">
-  </div>
+<!-- Produto 18 -->
+<div class="card" data-id="18">
+  <div class="product-img"><img src="organizador-maquiagem.png"></div>
   <div class="card-content">
     <h2>Organizador de Maquiagem</h2>
-    <p>Mantenha tudo organizado e fácil de acessar no dia a dia.</p>
-    <a class="btn" href="https://amzn.to/498ZOY1" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Tudo sempre à mão.</p>
+    <a class="btn" href="https://amzn.to/498ZOY1" target="_blank" onclick="registrarClique(18)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 19 -->
-<div class="card">
-  <div class="product-img">
-    <img src="escova-limpeza.png" alt="Escova de Limpeza Elétrica">
-  </div>
+<!-- Produto 19 -->
+<div class="card" data-id="19">
+  <div class="product-img"><img src="escova-limpeza.png"></div>
   <div class="card-content">
     <h2>Escova de Limpeza Elétrica</h2>
-    <p>Limpeza rápida e sem esforço para cozinha, banheiro e azulejos.</p>
-    <a class="btn" href="https://amzn.to/45l9MUM" target="_blank">
-      Ver no Amazon
-    </a>
-  </div>
-</div>
-    
-    <!-- Produto 20 -->
-<div class="card">
-  <div class="product-img">
-    <img src="luminaria-touch.png" alt="Luminária Touch Recarregável">
-  </div>
-  <div class="card-content">
-    <h2>Luminária Touch Recarregável</h2>
-    <p>Iluminação moderna com controle por toque — prática e elegante.</p>
-    <a class="btn" href="https://amzn.to/3MQchbx" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Limpeza sem esforço.</p>
+    <a class="btn" href="https://amzn.to/45l9MUM" target="_blank" onclick="registrarClique(19)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 21 -->
-<div class="card">
-  <div class="product-img">
-    <img src="organizador-sapatos.png" alt="Organizador de Sapatos">
+<!-- Produto 20 -->
+<div class="card" data-id="20">
+  <div class="product-img"><img src="luminaria-touch.png"></div>
+  <div class="card-content">
+    <h2>Luminária Touch Recarregável</h2>
+    <p>Design moderno.</p>
+    <a class="btn" href="https://amzn.to/3MQchbx" target="_blank" onclick="registrarClique(20)">Ver no Amazon</a>
   </div>
+</div>
+
+<!-- Produto 21 -->
+<div class="card" data-id="21">
+  <div class="product-img"><img src="organizador-sapatos.png"></div>
   <div class="card-content">
     <h2>Organizador de Sapatos</h2>
-    <p>Mais espaço, mais organização e tudo sempre visível no seu armário.</p>
-    <a class="btn" href="https://amzn.to/3KWN3HT" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Mais espaço no armário.</p>
+    <a class="btn" href="https://amzn.to/3KWN3HT" target="_blank" onclick="registrarClique(21)">Ver no Amazon</a>
   </div>
 </div>
 
 <!-- Produto 22 -->
-<div class="card">
-  <div class="product-img">
-    <img src="papa-bolinha.png" alt="Removedor de Fiapos Papa Bolinha">
-  </div>
+<div class="card" data-id="22">
+  <div class="product-img"><img src="papa-bolinha.png"></div>
   <div class="card-content">
-    <h2>Removedor de Fiapos (Papa Bolinha)</h2>
-    <p>Deixa roupas, sofás e cobertores com cara de novos em minutos.</p>
-    <a class="btn" href="https://amzn.to/3L9Kfah" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>Removedor de Fiapos</h2>
+    <p>Roupas como novas.</p>
+    <a class="btn" href="https://amzn.to/3L9Kfah" target="_blank" onclick="registrarClique(22)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 23 -->
-<div class="card">
-  <div class="product-img">
-    <img src="mini-umidificador.png" alt="Mini Umidificador Portátil">
-  </div>
+<!-- Produto 23 -->
+<div class="card" data-id="23">
+  <div class="product-img"><img src="mini-umidificador.png"></div>
   <div class="card-content">
-    <h2>Mini Umidificador Portátil USB</h2>
-    <p>Melhora o ar do ambiente, ajuda na respiração e ainda deixa o quarto mais aconchegante ✨</p>
-    <a class="btn" href="https://amzn.to/4pPpH64" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>Mini Umidificador USB</h2>
+    <p>Melhora o ar do ambiente.</p>
+    <a class="btn" href="https://amzn.to/4pPpH64" target="_blank" onclick="registrarClique(23)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 24 -->
-<div class="card">
-  <div class="product-img">
-    <img src="esponja-silicone.png" alt="Esponja de Silicone Antibacteriana">
-  </div>
+<!-- Produto 24 -->
+<div class="card" data-id="24">
+  <div class="product-img"><img src="esponja-silicone.png"></div>
   <div class="card-content">
-    <h2>Esponja de Silicone Antibacteriana</h2>
-    <p>Não junta bactérias, não fica com cheiro e dura muito mais que a esponja comum.</p>
-    <a class="btn" href="https://amzn.to/4pboV20" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>Esponja de Silicone</h2>
+    <p>Mais higiênica e durável.</p>
+    <a class="btn" href="https://amzn.to/4pboV20" target="_blank" onclick="registrarClique(24)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 25 -->
-<div class="card">
-  <div class="product-img">
-    <img src="rodo-magico.png" alt="Rodo Mágico 2 em 1">
-  </div>
+<!-- Produto 25 -->
+<div class="card" data-id="25">
+  <div class="product-img"><img src="rodo-magico.png"></div>
   <div class="card-content">
     <h2>Rodo Mágico 2 em 1</h2>
-    <p>Limpa vidros, pisos e superfícies sem esforço e sem sujeira.</p>
-    <a class="btn" href="https://amzn.to/4pdSq3m" target="_blank">
-      Ver no Amazon
-    </a>
+    <p>Limpeza prática.</p>
+    <a class="btn" href="https://amzn.to/4pdSq3m" target="_blank" onclick="registrarClique(25)">Ver no Amazon</a>
   </div>
 </div>
 
-    <!-- Produto 26 -->
-<div class="card">
-  <div class="product-img">
-    <img src="led-vaso-sanitario.png" alt="LED para Vaso Sanitário com Sensor">
-  </div>
+<!-- Produto 26 -->
+<div class="card" data-id="26">
+  <div class="product-img"><img src="led-vaso-sanitario.png"></div>
   <div class="card-content">
-    <h2>LED para Vaso Sanitário com Sensor</h2>
-    <p>Acende automaticamente no escuro e evita sustos à noite 🚽✨</p>
-    <a class="btn" href="https://amzn.to/4q5UDiQ" target="_blank">
-      Ver no Amazon
-    </a>
+    <h2>LED para Vaso Sanitário</h2>
+    <p>Sensor automático no escuro.</p>
+    <a class="btn" href="https://amzn.to/4q5UDiQ" target="_blank" onclick="registrarClique(26)">Ver no Amazon</a>
   </div>
 </div>
 
-    <footer>  
-  © Achados Geniais  
-    </footer>
-    
-  </div>  
-</body>  
-</html>  
+
+<footer>© Achados Geniais</footer>
+</div>
+
+<script>
+const STORAGE_KEY = 'cliques_produtos';
+const RESET_KEY = 'reset_semanal';
+
+function getSemanaAtual() {
+  const hoje = new Date();
+  const primeiroDia = new Date(hoje.getFullYear(), 0, 1);
+  const diff = hoje - primeiroDia;
+  return Math.ceil((diff / 86400000 + primeiroDia.getDay() + 1) / 7);
+}
+
+function verificarReset() {
+  const semanaAtual = getSemanaAtual();
+  const semanaSalva = localStorage.getItem(RESET_KEY);
+
+  if (semanaSalva != semanaAtual) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({}));
+    localStorage.setItem(RESET_KEY, semanaAtual);
+  }
+}
+
+function registrarClique(id) {
+  verificarReset();
+
+  const dados = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  dados[id] = (dados[id] || 0) + 1;
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+}
+
+function destacarProdutoEmAlta() {
+  verificarReset();
+
+  const dados = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  let vencedor = null;
+  let maior = 0;
+
+  for (let id in dados) {
+    if (dados[id] > maior) {
+      maior = dados[id];
+      vencedor = id;
+    }
+  }
+
+  if (!vencedor) return;
+
+  const produto = document.querySelector(`.card[data-id="${vencedor}"]`);
+  if (!produto) return;
+
+  const badge = document.createElement('div');
+  badge.innerText = '🔥 Em Alta';
+  badge.style.background = '#ff4d00';
+  badge.style.color = '#fff';
+  badge.style.padding = '5px 10px';
+  badge.style.borderRadius = '20px';
+  badge.style.fontSize = '12px';
+  badge.style.marginBottom = '10px';
+  badge.style.display = 'inline-block';
+
+  produto.querySelector('.card-content').prepend(badge);
+
+  const container = produto.parentElement;
+  container.prepend(produto);
+}
+
+document.addEventListener('DOMContentLoaded', destacarProdutoEmAlta);
+</script>
+
+</body>
+</html>
